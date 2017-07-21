@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
-  <title>Zephyr中文网</title>
+  <title>在 Windows 下搭建开发环境 | Zephyr中文网</title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
@@ -41,17 +41,17 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Zephyr中文网">
   <!-- Open Graph -->
-  <meta name="description" content="Zephyr Project, a IoT RTOS">
+  <meta name="description" content="翻译：tidyjiang8  本节描述如何在微软的 Windows 环境下配置您的开发环境并编译 Zephyr 应用程序。 我们在 Win7、Win8.1 和 Win10 上面测试过示例程序 Hello World。 更新您的操作系统在编译之前，请确保您所运行的 Windows 系统已经安装了最新的更新包。 安装需求和依赖使用 MSYS2Windows 上面的 Zephyr 开发环境依赖于 MS">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Zephyr中文网">
+<meta property="og:title" content="在 Windows 下搭建开发环境">
 <meta property="og:url" content="https://hexo.io/zh-cn/docs/latest/start_win.html">
 <meta property="og:site_name" content="Zephyr中文网">
-<meta property="og:description" content="Zephyr Project, a IoT RTOS">
+<meta property="og:description" content="翻译：tidyjiang8  本节描述如何在微软的 Windows 环境下配置您的开发环境并编译 Zephyr 应用程序。 我们在 Win7、Win8.1 和 Win10 上面测试过示例程序 Hello World。 更新您的操作系统在编译之前，请确保您所运行的 Windows 系统已经安装了最新的更新包。 安装需求和依赖使用 MSYS2Windows 上面的 Zephyr 开发环境依赖于 MS">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-07-21T04:36:46.413Z">
+<meta property="og:updated_time" content="2017-07-21T15:34:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Zephyr中文网">
-<meta name="twitter:description" content="Zephyr Project, a IoT RTOS">
+<meta name="twitter:title" content="在 Windows 下搭建开发环境">
+<meta name="twitter:description" content="翻译：tidyjiang8  本节描述如何在微软的 Windows 环境下配置您的开发环境并编译 Zephyr 应用程序。 我们在 Win7、Win8.1 和 Win10 上面测试过示例程序 Hello World。 更新您的操作系统在编译之前，请确保您所运行的 Windows 系统已经安装了最新的更新包。 安装需求和依赖使用 MSYS2Windows 上面的 Zephyr 开发环境依赖于 MS">
 <meta name="twitter:site" content="zephyriot">
 <meta property="fb:admins" content="100000247608790">
   <!-- Google Analytics -->
@@ -124,14 +124,104 @@
           <div class="article">
             <div class="inner">
               <header class="article-header">
-                <h1 class="article-title" itemprop="name"></h1>
+                <h1 class="article-title" itemprop="name">在 Windows 下搭建开发环境</h1>
                 <a href="https://github.com/tidyjiang8/zephyrproject.cn/edit/master/source/zh-cn/docs/latest/start_win.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
               </header>
               <div class="article-content" itemprop="articleBody">
-                
+                <blockquote>
+<p>翻译：<a href="http://github.com/tidyjiang8/" target="_blank" rel="external">tidyjiang8</a></p>
+</blockquote>
+<p>本节描述如何在微软的 Windows 环境下配置您的开发环境并编译 Zephyr 应用程序。</p>
+<p>我们在 Win7、Win8.1 和 Win10 上面测试过示例程序 Hello World。</p>
+<h1 id="更新您的操作系统" class="article-heading"><a href="#更新您的操作系统" class="headerlink" title="更新您的操作系统"></a>更新您的操作系统<a class="article-anchor" href="#更新您的操作系统" aria-hidden="true"></a></h1><p>在编译之前，请确保您所运行的 Windows 系统已经安装了最新的更新包。</p>
+<h1 id="安装需求和依赖" class="article-heading"><a href="#安装需求和依赖" class="headerlink" title="安装需求和依赖"></a>安装需求和依赖<a class="article-anchor" href="#安装需求和依赖" aria-hidden="true"></a></h1><h2 id="使用-MSYS2" class="article-heading"><a href="#使用-MSYS2" class="headerlink" title="使用 MSYS2"></a>使用 MSYS2<a class="article-anchor" href="#使用-MSYS2" aria-hidden="true"></a></h2><p>Windows 上面的 Zephyr 开发环境依赖于 MSYS2。MSYS2 是 Windows 平台模拟 UNIX 环境的一个软件。请按照下面的步骤安装并设置 MSYS2。</p>
+<ol>
+<li>从 <a href="http://www.msys2.org/" target="_blank" rel="external">MSYS2 官网</a>下载适合您操作系统（32 位或者 64 位）的安装器安装 MSYS2。在安装的最后一个界面，点击“立即运行 MSYS2”。安装完成后，会启动 MSYS2 shell 控制台。请遵循 MSYS2 官网的指令更新软件包数据库和核心系统软件包。如果它提示您“终止 MSYS2 并再次检查更新”，请直接关闭 <code>MSYS2 MSYS Shell</code> 桌面应用程序并再次运行它，以完成更新。</li>
+<li><p>从开始菜单启动 <code>MSYS2 MSYS Shell</code> 桌面应用程序。</p>
+<blockquote>
+<p>注意1：需要启动的是 <code>MSYS2 MSYS Shell</code>，而不是 <code>MSYS2 MinGW Shell</code>。</p>
+<p>注意2：本教程中多次出现了 <code>export</code> 语句。为了避免多次输入，您可以在您的 <code>~/.bash_profile</code> 文件的顶部替换掉它们。</p>
+</blockquote>
+</li>
+<li><p>如果您开启了防火墙，您可以需要指定一个代理来访问 Internet 资源：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ <span class="built_in">export</span> http_proxy=http://proxy.mycompany.com:123</div><div class="line">$ <span class="built_in">export</span> https_proxy=<span class="variable">$http_proxy</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>安装编译 Zephyr 所需依赖：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ pacman -S git make gcc diffutils ncurses-devel python3</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装 Python 模块需要的 pip：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ curl -O <span class="string">'https://bootstrap.pypa.io/get-pip.py'</span></div><div class="line">$ ./get-pip.py</div><div class="line">$ rm get-pip.py</div><div class="line"></div><div class="line">$ pip install pyaml</div></pre></td></tr></table></figure>
+</li>
+<li><p>编译设备树编译器（DTC）</p>
+<p>对于 Zephyr 源代码目录 <code>dts/</code> 下面所列举的架构和开发板，需要 DTC 才能编译 Zephyr 的应用程序。请安装下面的指令设置 DTC。</p>
+<ul>
+<li><p>安装所需编译工具：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ pacman -S bison</div><div class="line">$ pacman -R flex</div><div class="line">$ pacman -U http://repo.msys2.org/msys/x86_64/flex-2.6.0-1-x86_64.pkg.tar.xz</div></pre></td></tr></table></figure>
+</li>
+<li><p>克隆并编译 DTC：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> ~</div><div class="line">$ git <span class="built_in">clone</span> https://git.kernel.org/pub/scm/utils/dtc/dtc.git</div><div class="line">$ <span class="built_in">cd</span> dtc</div><div class="line">$ make</div></pre></td></tr></table></figure>
+</li>
+<li><p>导出 DTC 所在路径： </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$ export DTC=~/dtc/dtc</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>编译系统现在可以与您的系统中的任何工具链一起工作了。下一步，我们将介绍如何安装编译 x86 和 ARM 应用程序所需工具链。</p>
+</li>
+<li><p>安装交叉编译器工具链。</p>
+<ul>
+<li><p>对于 x86，请从 Intel 开发者社区下载并安装 <a href="https://software.intel.com/en-us/articles/issm-toolchain-only-download" target="_blank" rel="external">2017 Windows ISSM 工具链</a>。您可以使用浏览器下载工具链的 <code>.tar.gz</code> 压缩文件。<br></p>
+<p><br>您需要 tar 应用程序来解压这个文件。在 <code>MSYS2 MSYS</code> 的控制台中，安装 <code>tar</code> 并使用它来解压工具链压缩包：</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ pacman -S tar</div><div class="line">$ tar -zxvf /c/Users/myusername/Downloads/issm-toolchain-windows-2017-01-15.tar.gz -C /c</div></pre></td></tr></table></figure>
+<p>请使用您下载的文件的名字替换掉上面的 .tar.gz 路径名。</p>
+<blockquote>
+<p>注意：ISSM 工具集只支持开发 Intel® Quark™ 微控制器，例如 Arduino 101 开发板。（请在文档<a href="https://software.intel.com/en-us/articles/getting-started-arduino-101genuino-101-with-intel-system-studio-for-microcontrollers" target="_blank" rel="external">Getting Started on Arduino 101 with ISSM</a> 中查看 “Zephyr Development Environment Setup” 的相关内容。）如果想要使用 ISSM GUI，则还需要进行额外的设置。</p>
+</blockquote>
+</li>
+<li><p>对于 ARM，请从 ARM 开发者社区安装 GNU ARM Embedded：<a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads" target="_blank" rel="external">GNU ARM Embedded</a></p>
+</li>
+</ul>
+</li>
+<li><p>在 <em>MSYS2 MSYS Shell</em> 控制台中，使用 Git 克隆一份 Zephyr 源代码到您的 home 目录：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> ~</div><div class="line">$ git <span class="built_in">clone</span> https://github.com/zephyrproject-rtos/zephyr.git</div></pre></td></tr></table></figure>
+</li>
+<li><p>还是在 MSYS 控制台中，为所安装的工具链和 Zephyr 环境设置环境变量（使用所提供的 shell 脚本）。</p>
+<ul>
+<li>对于 x86：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$ export ZEPHYR_GCC_VARIANT=issm</div><div class="line">$ export ISSM_INSTALLATION_PATH=/c/issm0-toolchain-windows-2017-01-25</div></pre></td></tr></table></figure>
+<p>在上面的命令中，请使用解压后的 ISSM 工具链的路径。</p>
+<ul>
+<li>对于 ARM：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ <span class="built_in">export</span> ZEPHYR_GCC_VARIANT=gccarmemb</div><div class="line">$ <span class="built_in">export</span> GCCARMEMB_TOOLCHAIN_PATH=/c/gccarmemb</div></pre></td></tr></table></figure>
+<ul>
+<li>对于其它平台，请运行所提供的脚本来舍子 zephyr 项目相关的变量：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ <span class="built_in">unset</span> ZEPHYR_SDK_INSTALL_DIR</div><div class="line">$ <span class="built_in">source</span> ~/zephyr/zephyr-env.sh</div></pre></td></tr></table></figure>
+</li>
+<li><p>然后，您就能编译示例程序 <a href="https://www.zephyrproject.org/doc/samples/hello_world/README.html#hello-world" target="_blank" rel="external">Hello World</a> 了。</p>
+<p>编译  Intel® Quark™ (x86-based) Arduino 101：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> <span class="variable">$ZEPHYR_BASE</span>/samples/hello_world</div><div class="line">$ make BOARD=arduino_101</div></pre></td></tr></table></figure>
+<p>编译基于 ARM 的 Nordic nRF52 开发套件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> <span class="variable">$ZEPHYR_BASE</span>/samples/hello_world</div><div class="line">$ make BOARD=nrf52_pca10040</div></pre></td></tr></table></figure>
+<p>至此，您就可以看到开发 Zephyr 所需的工具和工具链都已经安装并配置好了。</p>
+</li>
+</ol>
+<h2 id="使用-Windows-10-WSL-Win10-Linux-子系统" class="article-heading"><a href="#使用-Windows-10-WSL-Win10-Linux-子系统" class="headerlink" title="使用 Windows 10 WSL (Win10 Linux 子系统)"></a>使用 Windows 10 WSL (Win10 Linux 子系统)<a class="article-anchor" href="#使用-Windows-10-WSL-Win10-Linux-子系统" aria-hidden="true"></a></h2><p>如果您使用的是最新版的 win10，您可以利用其内置功能在标准的命令行提示符中运行原生的 Ubuntu 二进制镜像文件。这样，您就不需要安装虚拟机，直接就可以安装标准的 Zephyr SDK 并编译所有所支持的架构。</p>
+<ol>
+<li><p>按照微软官网上的说明安装 Win10 Linux 子系统：<a href="https://msdn.microsoft.com/en-us/commandline/wsl/install_guide" target="_blank" rel="external">安装 WSL</a></p>
+<blockquote>
+<p>注意： 要确保 Zephyr SDK 能正常工作，请安装 Win 10 build 15002 或更新版。您可以在系统设置的 “Abou your PC” 中查看您运行的是哪个版本的 Win 10。如果您运行的是老版本的 Win 10，您可能需要安装更新。</p>
+</blockquote>
+</li>
+<li><p>按照 Linux 入门指南中的说明安装对应于 Ubuntu 的 SDK：<a href="start_linux.html">在 Linux 上搭建开发环境</a></p>
+</li>
+</ol>
+
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2017-07-21T04:36:46.413Z" itemprop="dateModified">上次更新：2017-07-21</time>
+                <time class="article-footer-updated" datetime="2017-07-21T15:34:55.000Z" itemprop="dateModified">上次更新：2017-07-21</time>
                 <a href="start_mac.html" class="article-footer-prev" title="Mac"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="null" class="article-footer-next" title="概述"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
@@ -141,7 +231,7 @@
 <script>
   var disqus_shortname = 'zephyrproject';
   var disqus_url = 'https://hexo.io/zh-cn/docs/latest/start_win.html';
-  var disqus_title = "";
+  var disqus_title = "在 Windows 下搭建开发环境";
   var disqus_config = function(){
     this.language = 'zh';
   };
@@ -157,7 +247,7 @@
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">目录</strong>
-              
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#更新您的操作系统"><span class="toc-text">更新您的操作系统</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装需求和依赖"><span class="toc-text">安装需求和依赖</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-MSYS2"><span class="toc-text">使用 MSYS2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-Windows-10-WSL-Win10-Linux-子系统"><span class="toc-text">使用 Windows 10 WSL (Win10 Linux 子系统)</span></a></li></ol></li></ol>
               <a href="#" id="article-toc-top">回到顶部</a>
             </div>
           </aside>
