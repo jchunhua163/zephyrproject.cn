@@ -4,9 +4,9 @@
   <subtitle>Zephyr OS 中文网站</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://hexo.io/"/>
+  <link href="http://zephyrproject.cn/"/>
   <updated>2017-07-20T07:29:05.533Z</updated>
-  <id>https://hexo.io/</id>
+  <id>http://zephyrproject.cn/</id>
   
   <author>
     <name>tidyjiang@163.com</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>What&#39;s New</title>
-    <link href="https://hexo.io/blog/2223/10/23/news/"/>
-    <id>https://hexo.io/blog/2223/10/23/news/</id>
+    <link href="http://zephyrproject.cn/blog/2223/10/23/news/"/>
+    <id>http://zephyrproject.cn/blog/2223/10/23/news/</id>
     <published>2223-10-22T22:22:22.000Z</published>
     <updated>2017-07-20T07:29:05.533Z</updated>
     
