@@ -219,12 +219,12 @@ body {
   text-indent: 101%;
   white-space: nowrap;
   overflow: hidden;
-  background: url("/logo2.svg");
-  width: 152px;
-  height: 83px;
-  -webkit-background-size: 152px 83px;
-  -moz-background-size: 152px 83px;
-  background-size: 152px 83px;
+  background: url("/logo.svg");
+  width: 121px;
+  height: 66px;
+  -webkit-background-size: 121px 66px;
+  -moz-background-size: 121px 66px;
+  background-size: 121px 66px;
   display: block;
 }
 #main-nav {
