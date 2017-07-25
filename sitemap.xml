@@ -114,14 +114,14 @@
   </url>
   
   <url>
-    <loc>http://zephyrproject.cn/zh-cn/docs/templates.html</loc>
+    <loc>http://zephyrproject.cn/zh-cn/docs/themes.html</loc>
     
     <lastmod>2017-07-20T01:40:17.199Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://zephyrproject.cn/zh-cn/docs/themes.html</loc>
+    <loc>http://zephyrproject.cn/zh-cn/docs/templates.html</loc>
     
     <lastmod>2017-07-20T01:40:17.199Z</lastmod>
     
@@ -170,7 +170,7 @@
   </url>
   
   <url>
-    <loc>http://zephyrproject.cn/zh-cn/docs/generating.html</loc>
+    <loc>http://zephyrproject.cn/zh-cn/docs/index.html</loc>
     
     <lastmod>2017-07-20T01:40:17.171Z</lastmod>
     
@@ -184,13 +184,6 @@
   </url>
   
   <url>
-    <loc>http://zephyrproject.cn/zh-cn/docs/front-matter.html</loc>
-    
-    <lastmod>2017-07-20T01:40:17.171Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://zephyrproject.cn/zh-cn/docs/deployment.html</loc>
     
     <lastmod>2017-07-20T01:40:17.171Z</lastmod>
@@ -198,7 +191,14 @@
   </url>
   
   <url>
-    <loc>http://zephyrproject.cn/zh-cn/docs/index.html</loc>
+    <loc>http://zephyrproject.cn/zh-cn/docs/front-matter.html</loc>
+    
+    <lastmod>2017-07-20T01:40:17.171Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zephyrproject.cn/zh-cn/docs/helpers.html</loc>
     
     <lastmod>2017-07-20T01:40:17.171Z</lastmod>
     
@@ -219,7 +219,7 @@
   </url>
   
   <url>
-    <loc>http://zephyrproject.cn/zh-cn/docs/helpers.html</loc>
+    <loc>http://zephyrproject.cn/zh-cn/docs/generating.html</loc>
     
     <lastmod>2017-07-20T01:40:17.171Z</lastmod>
     
@@ -338,14 +338,14 @@
   </url>
   
   <url>
-    <loc>http://zephyrproject.cn/zh-cn/api/events.html</loc>
+    <loc>http://zephyrproject.cn/zh-cn/api/filter.html</loc>
     
     <lastmod>2017-07-20T01:40:17.147Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://zephyrproject.cn/zh-cn/api/filter.html</loc>
+    <loc>http://zephyrproject.cn/zh-cn/api/events.html</loc>
     
     <lastmod>2017-07-20T01:40:17.147Z</lastmod>
     
