@@ -205,14 +205,14 @@
   </url>
   
   <url>
-    <loc>http://zephyrproject.cn/zh-cn/docs/data-files.html</loc>
+    <loc>http://zephyrproject.cn/zh-cn/docs/contributing.html</loc>
     
     <lastmod>2017-07-20T01:40:17.171Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://zephyrproject.cn/zh-cn/docs/contributing.html</loc>
+    <loc>http://zephyrproject.cn/zh-cn/docs/data-files.html</loc>
     
     <lastmod>2017-07-20T01:40:17.171Z</lastmod>
     
@@ -240,14 +240,7 @@
   </url>
   
   <url>
-    <loc>http://zephyrproject.cn/zh-cn/docs/asset-folders.html</loc>
-    
-    <lastmod>2017-07-20T01:40:17.159Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zephyrproject.cn/zh-cn/api/rendering.html</loc>
+    <loc>http://zephyrproject.cn/zh-cn/api/tag.html</loc>
     
     <lastmod>2017-07-20T01:40:17.159Z</lastmod>
     
@@ -268,6 +261,13 @@
   </url>
   
   <url>
+    <loc>http://zephyrproject.cn/zh-cn/api/rendering.html</loc>
+    
+    <lastmod>2017-07-20T01:40:17.159Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://zephyrproject.cn/zh-cn/api/renderer.html</loc>
     
     <lastmod>2017-07-20T01:40:17.159Z</lastmod>
@@ -282,7 +282,7 @@
   </url>
   
   <url>
-    <loc>http://zephyrproject.cn/zh-cn/api/tag.html</loc>
+    <loc>http://zephyrproject.cn/zh-cn/api/themes.html</loc>
     
     <lastmod>2017-07-20T01:40:17.159Z</lastmod>
     
@@ -296,7 +296,7 @@
   </url>
   
   <url>
-    <loc>http://zephyrproject.cn/zh-cn/api/themes.html</loc>
+    <loc>http://zephyrproject.cn/zh-cn/docs/asset-folders.html</loc>
     
     <lastmod>2017-07-20T01:40:17.159Z</lastmod>
     
@@ -310,20 +310,6 @@
   </url>
   
   <url>
-    <loc>http://zephyrproject.cn/zh-cn/api/locals.html</loc>
-    
-    <lastmod>2017-07-20T01:40:17.155Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zephyrproject.cn/zh-cn/api/generator.html</loc>
-    
-    <lastmod>2017-07-20T01:40:17.155Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://zephyrproject.cn/zh-cn/api/index.html</loc>
     
     <lastmod>2017-07-20T01:40:17.155Z</lastmod>
@@ -332,6 +318,20 @@
   
   <url>
     <loc>http://zephyrproject.cn/zh-cn/api/helper.html</loc>
+    
+    <lastmod>2017-07-20T01:40:17.155Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zephyrproject.cn/zh-cn/api/locals.html</loc>
+    
+    <lastmod>2017-07-20T01:40:17.155Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zephyrproject.cn/zh-cn/api/generator.html</loc>
     
     <lastmod>2017-07-20T01:40:17.155Z</lastmod>
     
@@ -548,13 +548,6 @@
   </url>
   
   <url>
-    <loc>http://zephyrproject.cn/api/router.html</loc>
-    
-    <lastmod>2017-07-20T01:40:15.259Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://zephyrproject.cn/api/scaffolds.html</loc>
     
     <lastmod>2017-07-20T01:40:15.259Z</lastmod>
@@ -562,7 +555,7 @@
   </url>
   
   <url>
-    <loc>http://zephyrproject.cn/api/processor.html</loc>
+    <loc>http://zephyrproject.cn/api/router.html</loc>
     
     <lastmod>2017-07-20T01:40:15.259Z</lastmod>
     
@@ -570,6 +563,13 @@
   
   <url>
     <loc>http://zephyrproject.cn/api/renderer.html</loc>
+    
+    <lastmod>2017-07-20T01:40:15.259Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zephyrproject.cn/api/processor.html</loc>
     
     <lastmod>2017-07-20T01:40:15.259Z</lastmod>
     
