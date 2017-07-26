@@ -2,17 +2,17 @@
 <html lang="zh-cn">
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
-  <title>文档 | Zephyr中文社区</title>
+  <title>与第 1 版内核的改动 | Zephyr中文社区</title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://zephyrproject.cn/zh-cn/docs/latest/index.html">
+  <link rel="canonical" href="http://zephyrproject.cn/zh-cn/docs/latest/k_overview_change.html">
   <!-- Alternative links -->
   
     
-      <link rel="alternative" hreflang="en" href="http://zephyrproject.cn/docs/latest/index.html">
+      <link rel="alternative" hreflang="en" href="http://zephyrproject.cn/docs/latest/k_overview_change.html">
     
-      <link rel="alternative" hreflang="zh-cn" href="http://zephyrproject.cn/zh-cn/docs/latest/index.html">
+      <link rel="alternative" hreflang="zh-cn" href="http://zephyrproject.cn/zh-cn/docs/latest/k_overview_change.html">
     
   
   <!-- Icon -->
@@ -41,19 +41,17 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Zephyr中文社区">
   <!-- Open Graph -->
-  <meta name="description" content="欢迎阅读本文档！ 如果你在阅读的过程中有发现任何不妥之处，请点击右侧目录左边的画笔图标，查看当前文档对应的源文件，进行修改，并提交 Pull Request。   Zephyr 简介 Zephyr 入门指导 在 Linux 下搭建开发环境 在 Mac 下搭建开发环境 在 Win 下搭建开发环境   内核开发入门 概述 源码树结构 与第 1 版内核的改动">
+  <meta name="description" content="翻译：tidyjiang8  当前的 Zephyr 内核相对于 1.5 及其之前发布的版本的内核有了巨大的改变，这些改变使 Zephyr 的开发者能更方便地使用 Zephyr 进行开发。 这些变化的主要优点包括：  消除了单独的 micorkernel 和 nanokernel 的编译类型 消除了基于 microkernel 的应用程序的 MDEF 简化、统一了内核的 API 减轻了使用内核对象">
 <meta property="og:type" content="website">
-<meta property="og:title" content="文档">
-<meta property="og:url" content="http://zephyrproject.cn/zh-cn/docs/latest/index.html">
+<meta property="og:title" content="与第 1 版内核的改动">
+<meta property="og:url" content="http://zephyrproject.cn/zh-cn/docs/latest/k_overview_change.html">
 <meta property="og:site_name" content="Zephyr中文社区">
-<meta property="og:description" content="欢迎阅读本文档！ 如果你在阅读的过程中有发现任何不妥之处，请点击右侧目录左边的画笔图标，查看当前文档对应的源文件，进行修改，并提交 Pull Request。   Zephyr 简介 Zephyr 入门指导 在 Linux 下搭建开发环境 在 Mac 下搭建开发环境 在 Win 下搭建开发环境   内核开发入门 概述 源码树结构 与第 1 版内核的改动">
+<meta property="og:description" content="翻译：tidyjiang8  当前的 Zephyr 内核相对于 1.5 及其之前发布的版本的内核有了巨大的改变，这些改变使 Zephyr 的开发者能更方便地使用 Zephyr 进行开发。 这些变化的主要优点包括：  消除了单独的 micorkernel 和 nanokernel 的编译类型 消除了基于 microkernel 的应用程序的 MDEF 简化、统一了内核的 API 减轻了使用内核对象">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:image" content="http://zephyrproject.cn/zh-cn/docs/latest/index/pen.PNG">
-<meta property="og:updated_time" content="2017-07-26T03:12:05.000Z">
+<meta property="og:updated_time" content="2017-07-26T03:04:58.024Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="文档">
-<meta name="twitter:description" content="欢迎阅读本文档！ 如果你在阅读的过程中有发现任何不妥之处，请点击右侧目录左边的画笔图标，查看当前文档对应的源文件，进行修改，并提交 Pull Request。   Zephyr 简介 Zephyr 入门指导 在 Linux 下搭建开发环境 在 Mac 下搭建开发环境 在 Win 下搭建开发环境   内核开发入门 概述 源码树结构 与第 1 版内核的改动">
-<meta name="twitter:image" content="http://zephyrproject.cn/zh-cn/docs/latest/index/pen.PNG">
+<meta name="twitter:title" content="与第 1 版内核的改动">
+<meta name="twitter:description" content="翻译：tidyjiang8  当前的 Zephyr 内核相对于 1.5 及其之前发布的版本的内核有了巨大的改变，这些改变使 Zephyr 的开发者能更方便地使用 Zephyr 进行开发。 这些变化的主要优点包括：  消除了单独的 micorkernel 和 nanokernel 的编译类型 消除了基于 microkernel 的应用程序的 MDEF 简化、统一了内核的 API 减轻了使用内核对象">
 <meta name="twitter:site" content="zephyriot">
 <meta property="fb:admins" content="100000247608790">
   <!-- Google Analytics -->
@@ -102,7 +100,7 @@
     </nav>
     <div id="lang-select-wrap">
       <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
-      <select id="lang-select" data-canonical="docs/latest/index.html">
+      <select id="lang-select" data-canonical="docs/latest/k_overview_change.html">
         
           <option value="en">English</option>
         
@@ -126,35 +124,59 @@
           <div class="article">
             <div class="inner">
               <header class="article-header">
-                <h1 class="article-title" itemprop="name">文档</h1>
-                <a href="https://github.com/tidyjiang8/zephyrproject.cn/edit/master/source/zh-cn/docs/latest/index.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+                <h1 class="article-title" itemprop="name">与第 1 版内核的改动</h1>
+                <a href="https://github.com/tidyjiang8/zephyrproject.cn/edit/master/source/zh-cn/docs/latest/k_overview_change.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
               </header>
               <div class="article-content" itemprop="articleBody">
-                <p>欢迎阅读本文档！</p>
-<p>如果你在阅读的过程中有发现任何不妥之处，请点击右侧目录左边的画笔<img src="index/pen.PNG" alt="">图标，查看当前文档对应的源文件，进行修改，并提交 Pull Request。</p>
-<hr>
+                <blockquote>
+<p>翻译：<a href="http://github.com/tidyjiang8/" target="_blank" rel="external">tidyjiang8</a></p>
+</blockquote>
+<p>当前的 Zephyr 内核相对于 1.5 及其之前发布的版本的内核有了巨大的改变，这些改变使 Zephyr 的开发者能更方便地使用 Zephyr 进行开发。</p>
+<p>这些变化的主要优点包括：</p>
 <ul>
-<li><a href="introduce.html">Zephyr 简介</a></li>
-<li><a href="start_index.html">Zephyr 入门指导</a><ul>
-<li><a href="start_linux.html">在 Linux 下搭建开发环境</a></li>
-<li><a href="start_mac.html">在 Mac 下搭建开发环境</a></li>
-<li><a href="start_win.html">在 Win 下搭建开发环境</a></li>
+<li>消除了单独的 micorkernel 和 nanokernel 的编译类型</li>
+<li>消除了基于 microkernel 的应用程序的 MDEF</li>
+<li>简化、统一了内核的 API</li>
+<li>减轻了使用内核对象的限制</li>
+<li>减小了合并相似服务的内存占用</li>
+<li>通过减小上下文切换提升了性能</li>
 </ul>
-</li>
-<li><a href="k_overview.html">内核开发入门</a><ul>
-<li><a href="k_overview_index.html">概述</a><ul>
-<li><a href="k_overview_tree.html">源码树结构</a></li>
-<li><a href="k_overview_change.html">与第 1 版内核的改动</a></li>
-</ul>
-</li>
-<li><a href=""></a></li>
-</ul>
-</li>
-</ul>
+<p>下面我们将挑选一些重点进行介绍。</p>
+<h1 id="应用程序的用法" class="article-heading"><a href="#应用程序的用法" class="headerlink" title="应用程序的用法"></a>应用程序的用法<a class="article-anchor" href="#应用程序的用法" aria-hidden="true"></a></h1><p>Zephyr 的 microkernel 和 nanokernel 被合并为了一个叫做“内核”的实体。相应地，现在只有一种方法去设计、编译 Zephyr 应用程序。</p>
+<p>task 和 fiber 上下文类型被合并为了一个叫做“线程”的类型。优先级为负数的线程被叫做“协作式线程”，它的运行方式与 fiber 类似；优先级非负的线程被叫做“可抢占式线程”，它的运作方式与 task 类似。</p>
+<p>现在的内核对象既可以被 task 类线程使用，又可以被 fiber 类线程使用（第 1 版内核不允许 fiber 使用 microkernel 的对象，且当 task 使用 nanokernel 对象时会导致不可预料的忙等待）。</p>
+<p>现在的内核对象通常都允许多线程等待同一个的对象（第 1 版的内核严格限制只能单一线程等待特定的对象）。</p>
+<p>现在的内核对象 API 总是执行在线程的上下文（第 1 版内核需要 microkernel 对象 API 切换到 microkernel 服务 fiber，然后再切换回调用的线程）。</p>
+<p>MDEF 被完全删除了。相应地，所有的内核对象直接被定义在代码里面。</p>
+<h1 id="内核的-API" class="article-heading"><a href="#内核的-API" class="headerlink" title="内核的 API"></a>内核的 API<a class="article-anchor" href="#内核的-API" aria-hidden="true"></a></h1><p>大多数的内核 API 都被重命名或者/和修改了参数列表，以使其更直观、统一。现在，大多数内核 API 都以 k<em> 和 K</em> 作为前缀。</p>
+<p>第 1 版内核的操作在 task、fiber 和 ISR 中需要使用不同的 API 进行调用，而现在在线程或者 ISR 中的 API 是统一的。</p>
+<p>现在，许多内核 API 都通过返回 0 表示成功，非 0 表示错误代码，以只是错误的原因（第 1 版只支持两个错误代码）。</p>
+<h1 id="线程" class="article-heading"><a href="#线程" class="headerlink" title="线程"></a>线程<a class="article-anchor" href="#线程" aria-hidden="true"></a></h1><p>task 类的线程现在可以锁定内核的调度器（而不是锁定中断）使自己临时不可被抢占。</p>
+<p>现在可以给线程的入口点传递三个参数（第 1 版只允许给 fiber 传递两个参数，且不允许给 task 传递参数）。</p>
+<p>现在可以延迟启动静态定义的线程（第 1 版只允许在运行时延迟 fiber 的产生）。</p>
+<p>task 不再需要指定 task 正常结束或者异常终止时自动调用的“task 终止处理着”函数。</p>
+<p>应用程序不再需要使用“任务组”来指定用于单个内核 API 调用的一系列相近的任务。</p>
+<p>内核现在在启动时同时创建 main 线程和 idle 线程（第 1 版内核只创建一个线程）。</p>
+<p>内核的 main 线程负责执行系统的初始化，然后调用 main() 函数。如果应用程序没有指定<code>main()</code> 函数，main 线程将直接结束。</p>
+<p>现在的系统初始化代码可以执行阻塞操作，在阻塞期间将会执行内核的 idle 线程。</p>
+<h1 id="定时" class="article-heading"><a href="#定时" class="headerlink" title="定时"></a>定时<a class="article-anchor" href="#定时" aria-hidden="true"></a></h1><p>现在大多数内核 API 都能以毫秒（而不是系统时钟滴答）为单位指定超时间隔。这个改动让开发者可以更直观地使用 API。尽管如此，内核内部依然使用基于滴答的系统时钟来实现的超时功能。</p>
+<p>nanokernel 定时器和 microkernel 定时器对象类型被合并为一个类型。</p>
+<h1 id="内存分配" class="article-heading"><a href="#内存分配" class="headerlink" title="内存分配"></a>内存分配<a class="article-anchor" href="#内存分配" aria-hidden="true"></a></h1><p>microkernel 内存映射对象被重命名为“内存片”,更能折现出管理大小相等的内存块的思想。</p>
+<p>现在可以指定内存片或者内存池所使用的内存块的对齐操作。</p>
+<p>现在可以直接在代码里定义内存池。</p>
+<p>现在可以使用类似 malloc() 的方式从堆数据池分配、释放内存。</p>
+<h1 id="同步" class="article-heading"><a href="#同步" class="headerlink" title="同步"></a>同步<a class="article-anchor" href="#同步" aria-hidden="true"></a></h1><p>nanokernel 信号量和 microkernel 信号量对象类型被合并为了单一类型。新的类型可以直接作为二元信号量以及计数信号量。</p>
+<p>应用程序不能再使用信号量组来达到一个线程同时等待多个信号量的目的。在内核提供 select() 或 poll() 功能前，那些希望等待多个信号量的线程必须以非阻塞的方式单独测试每个信号量，或者使用其它的机制（例如事件对象）给某个有效信号量发送信号。</p>
+<p>microkernel 事件对象类型被重命名为“警报”，且类似于 Unix 风格的信号。由于对信号量进行了改进，对于基本同步，警报的效率比信号量的效率低。自然而然，警报主要被保留用于需要使用回调函数的场景。</p>
+<h1 id="数据传递" class="article-heading"><a href="#数据传递" class="headerlink" title="数据传递"></a>数据传递<a class="article-anchor" href="#数据传递" aria-hidden="true"></a></h1><p>为了避免与 nanokernel 的 FIFO 的对象类型冲突，microkernel 的 FIFO 对象类型已被重命名为“消息队列”。</p>
+<p>现在可以指定消息队列（即以前的 microkernel FIFO）中所存储的数据线的对齐操作。</p>
+<p>microkernel 的邮箱对象类型不再支持显式的消息优先级概念。现在的消息以发送消息的线程的优先级作为隐式顺序。</p>
+<p>microkernel 的邮箱对象类型将支持使用消息缓冲发送同步消息（第 1 版内核仅支持使用消息块发送同步消息）。</p>
+<p>现在可以指定 microkernel 管道对象的缓冲的对齐操作。</p>
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2017-07-26T03:12:05.000Z" itemprop="dateModified">上次更新：2017-07-26</time>
+                <time class="article-footer-updated" datetime="2017-07-26T03:04:58.024Z" itemprop="dateModified">上次更新：2017-07-26</time>
                 <a href="introduce.html" class="article-footer-next" title="Zephyr简介"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
@@ -163,8 +185,8 @@
 </section>
 <script>
   var disqus_shortname = 'zephyrproject';
-  var disqus_url = 'http://zephyrproject.cn/zh-cn/docs/latest/index.html';
-  var disqus_title = "文档";
+  var disqus_url = 'http://zephyrproject.cn/zh-cn/docs/latest/k_overview_change.html';
+  var disqus_title = "与第 1 版内核的改动";
   var disqus_config = function(){
     this.language = 'zh';
   };
@@ -180,7 +202,7 @@
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">目录</strong>
-              
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#应用程序的用法"><span class="toc-text">应用程序的用法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#内核的-API"><span class="toc-text">内核的 API</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#线程"><span class="toc-text">线程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#定时"><span class="toc-text">定时</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#内存分配"><span class="toc-text">内存分配</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#同步"><span class="toc-text">同步</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据传递"><span class="toc-text">数据传递</span></a></li></ol>
               <a href="#" id="article-toc-top">回到顶部</a>
             </div>
           </aside>
@@ -223,7 +245,7 @@
   </div>
   <div id="mobile-lang-select-wrap">
     <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
-    <select id="mobile-lang-select" data-canonical="docs/latest/index.html">
+    <select id="mobile-lang-select" data-canonical="docs/latest/k_overview_change.html">
       
         <option value="en">English</option>
       

@@ -2,17 +2,17 @@
 <html lang="zh-cn">
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
-  <title>Zephyr中文社区</title>
+  <title>线程 | Zephyr中文社区</title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://zephyrproject.cn/index.html">
+  <link rel="canonical" href="http://zephyrproject.cn/zh-cn/docs/latest/k_thread.html">
   <!-- Alternative links -->
   
     
-      <link rel="alternative" hreflang="en" href="http://zephyrproject.cn/index.html">
+      <link rel="alternative" hreflang="en" href="http://zephyrproject.cn/docs/latest/k_thread.html">
     
-      <link rel="alternative" hreflang="zh-cn" href="http://zephyrproject.cn/zh-cn/index.html">
+      <link rel="alternative" hreflang="zh-cn" href="http://zephyrproject.cn/zh-cn/docs/latest/k_thread.html">
     
   
   <!-- Icon -->
@@ -41,17 +41,17 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Zephyr中文社区">
   <!-- Open Graph -->
-  <meta name="description" content="Hexo is a fast, simple &amp; powerful blog framework powered by Node.js.">
+  <meta name="description" content="本节描述内核提供的创建、调度、删除线程的服务。  生命周期 调度 自定义数据 系统线程 工作队列">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Zephyr中文社区">
-<meta property="og:url" content="http://zephyrproject.cn/index.html">
+<meta property="og:title" content="线程">
+<meta property="og:url" content="http://zephyrproject.cn/zh-cn/docs/latest/k_thread.html">
 <meta property="og:site_name" content="Zephyr中文社区">
-<meta property="og:description" content="Hexo is a fast, simple &amp; powerful blog framework powered by Node.js.">
+<meta property="og:description" content="本节描述内核提供的创建、调度、删除线程的服务。  生命周期 调度 自定义数据 系统线程 工作队列">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-07-26T02:18:02.777Z">
+<meta property="og:updated_time" content="2017-07-26T03:33:41.138Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Zephyr中文社区">
-<meta name="twitter:description" content="Hexo is a fast, simple &amp; powerful blog framework powered by Node.js.">
+<meta name="twitter:title" content="线程">
+<meta name="twitter:description" content="本节描述内核提供的创建、调度、删除线程的服务。  生命周期 调度 自定义数据 系统线程 工作队列">
 <meta name="twitter:site" content="zephyriot">
 <meta property="fb:admins" content="100000247608790">
   <!-- Google Analytics -->
@@ -100,7 +100,7 @@
     </nav>
     <div id="lang-select-wrap">
       <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
-      <select id="lang-select" data-canonical="">
+      <select id="lang-select" data-canonical="docs/latest/k_thread.html">
         
           <option value="en">English</option>
         
@@ -116,34 +116,64 @@
   </div>
 </header>
 
-    <header id="banner" class="wrapper">
-  <div class="inner">
-    <h2 id="banner-title">为IoT嵌入式设备设计的小型可伸缩开源RTOS</h2>
-    <div id="banner-start">
-      <span id="banner-start-command">git clone https://github.com/zephyrproject-rtos/zephyr.git</span><a id="banner-start-link" href="docs/"><i class="fa fa-arrow-right"></i></a>
-    </div>
-    <div id="banner-share"><!-- GitHub Star -->
-<a class="github-button" href="https://github.com/zephyrproject-rtos/zephyr" data-count-href="/zephyrproject-rtos/zephyr/stargazers" data-count-api="/repos/zephyrproject-rtos/zephyr#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star zephyrproject-rtos/zephyr on GitHub">Star</a>
-<!-- GitHub fork -->
-<a class="github-button" href="https://github.com/zephyrproject-rtos/zephyr/fork" data-count-href="/zephyrproject-rtos/zephyr/network" data-count-api="/repos/zephyrproject-rtos/zephyr#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork zephyrproject/zephyr on GitHub">Fork</a>
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">线程</h1>
+                <a href="https://github.com/tidyjiang8/zephyrproject.cn/edit/master/source/zh-cn/docs/latest/k_thread.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <p>本节描述内核提供的创建、调度、删除线程的服务。</p>
+<ul>
+<li><a href="k_thread_lifecycle.html">生命周期</a></li>
+<li><a href="">调度</a></li>
+<li><a href="">自定义数据</a></li>
+<li><a href="">系统线程</a></li>
+<li><a href="">工作队列</a></li>
+</ul>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2017-07-26T03:33:41.138Z" itemprop="dateModified">上次更新：2017-07-26</time>
+                <a href="k_overview.html" class="article-footer-prev" title="概述"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="k_timing.html" class="article-footer-next" title="定时"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+<section id="comments">
+  <div id="disqus_thread"></div>
+</section>
 <script>
-window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+  var disqus_shortname = 'zephyrproject';
+  var disqus_url = 'http://zephyrproject.cn/zh-cn/docs/latest/k_thread.html';
+  var disqus_title = "线程";
+  var disqus_config = function(){
+    this.language = 'zh';
+  };
+  (function(){
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'https://go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
 </script>
-</div>
-  </div>
-</header>
-<div id="content-wrap">
-  <div class="wrapper">
-    <div class="inner">
-      <ul id="intro-feature-list"><li class="intro-feature-wrap"><div class="intro-feature"><div class="intro-feature-icon"><i class="fa fa-bolt"></i></div><h3 class="intro-feature-title">丰富的协议栈 </h3><p class="intro-feature-desc">专为资源受限设备而优化的协议栈。支持或即将支持Bluetooth、BLE、Wi-Fi、802.15.4以及其它标准，例如6LoWPAN、CoAP、IPv4、IPv6和NFC等。</p></div></li><li class="intro-feature-wrap"><div class="intro-feature"><div class="intro-feature-icon"><i class="fa fa-pencil"></i></div><h3 class="intro-feature-title">开源</h3><p class="intro-feature-desc">由Linux基金会发起，采用Apache 2开源许可证，开发者异常活跃。</p></div></li><li class="intro-feature-wrap"><div class="intro-feature"><div class="intro-feature-icon"><i class="fa fa-cloud-upload"></i></div><h3 class="intro-feature-title">模块化</h3><p class="intro-feature-desc">高度可配置。提供图像配置界面，用户可以根据自己需要进行裁剪。</p></div></li><li class="intro-feature-wrap"><div class="intro-feature"><div class="intro-feature-icon"><i class="fa fa-cog"></i></div><h3 class="intro-feature-title">安全</h3><p class="intro-feature-desc">安全的开发生命周期，包括：安全验证、模糊和渗透测试、静态代码分析、频繁的代码审查，以杜绝代码中的后门。</p></div></li></ul>
-      <ul id="intro-cmd-wrap">
-        <li class="intro-cmd-item">git clone https://github.com/zephyrproject-rtos/zephyr</li>
-        <li class="intro-cmd-item">cd zephyr</li>
-        <li class="intro-cmd-item">git checkout tags/v1.8.0</li>
-      </ul>
-      <div id="intro-get-started-wrap">
-        <a href="docs/" id="intro-get-started-link">开始使用</a>
-      </div>
+
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner"><strong class="sidebar-title">前言</strong><a href="introduce.html" class="sidebar-link">Zephyr简介</a><strong class="sidebar-title">入门指导</strong><a href="start_index.html" class="sidebar-link">搭建开发环境</a><a href="start_linux.html" class="sidebar-link">Linux</a><a href="start_mac.html" class="sidebar-link">Mac</a><a href="start_win.html" class="sidebar-link">Win</a><strong class="sidebar-title">内核入门</strong><a href="k_overview.html" class="sidebar-link">概述</a><a href="k_thread.html" class="sidebar-link current">线程</a><a href="k_timing.html" class="sidebar-link">定时</a><a href="k_memory.html" class="sidebar-link">内存分配</a><a href="k_sync.html" class="sidebar-link">同步</a><a href="k_datapassing.html" class="sidebar-link">数据传递</a><a href="k_other.html" class="sidebar-link">其它服务</a><strong class="sidebar-title">应用程序开发入门</strong><a href="null" class="sidebar-link">概述</a><strong class="sidebar-title">移植指导</strong><a href="null" class="sidebar-link">概述</a><strong class="sidebar-title">设备驱动和设备模型</strong><a href="null" class="sidebar-link">概述</a><strong class="sidebar-title">设备树</strong><a href="null" class="sidebar-link">概述</a><strong class="sidebar-title">子系统</strong><a href="null" class="sidebar-link">概述</a></div>
+</aside>
     </div>
   </div>
 </div>
@@ -173,10 +203,12 @@ window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.
       </li>
     </ul>
     
+      <strong class="mobile-nav-title">前言</strong><a href="introduce.html" class="mobile-nav-link">Zephyr简介</a><strong class="mobile-nav-title">入门指导</strong><a href="start_index.html" class="mobile-nav-link">搭建开发环境</a><a href="start_linux.html" class="mobile-nav-link">Linux</a><a href="start_mac.html" class="mobile-nav-link">Mac</a><a href="start_win.html" class="mobile-nav-link">Win</a><strong class="mobile-nav-title">内核入门</strong><a href="k_overview.html" class="mobile-nav-link">概述</a><a href="k_thread.html" class="mobile-nav-link current">线程</a><a href="k_timing.html" class="mobile-nav-link">定时</a><a href="k_memory.html" class="mobile-nav-link">内存分配</a><a href="k_sync.html" class="mobile-nav-link">同步</a><a href="k_datapassing.html" class="mobile-nav-link">数据传递</a><a href="k_other.html" class="mobile-nav-link">其它服务</a><strong class="mobile-nav-title">应用程序开发入门</strong><a href="null" class="mobile-nav-link">概述</a><strong class="mobile-nav-title">移植指导</strong><a href="null" class="mobile-nav-link">概述</a><strong class="mobile-nav-title">设备驱动和设备模型</strong><a href="null" class="mobile-nav-link">概述</a><strong class="mobile-nav-title">设备树</strong><a href="null" class="mobile-nav-link">概述</a><strong class="mobile-nav-title">子系统</strong><a href="null" class="mobile-nav-link">概述</a>
+    
   </div>
   <div id="mobile-lang-select-wrap">
     <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
-    <select id="mobile-lang-select" data-canonical="">
+    <select id="mobile-lang-select" data-canonical="docs/latest/k_thread.html">
       
         <option value="en">English</option>
       
