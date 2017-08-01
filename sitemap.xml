@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://zephyrproject.cn/t_guide/overview.html</loc>
+    
+    <lastmod>2017-08-01T11:32:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://zephyrproject.cn/t_guide/ubuntu.html</loc>
     
     <lastmod>2017-08-01T08:24:22.758Z</lastmod>
@@ -16,14 +23,14 @@
   </url>
   
   <url>
-    <loc>http://zephyrproject.cn/opensource/index.html</loc>
+    <loc>http://zephyrproject.cn/tutorial/deep/index.html</loc>
     
     <lastmod>2017-08-01T06:26:47.897Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://zephyrproject.cn/tutorial/deep/index.html</loc>
+    <loc>http://zephyrproject.cn/opensource/index.html</loc>
     
     <lastmod>2017-08-01T06:26:47.897Z</lastmod>
     
