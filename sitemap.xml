@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://zephyrproject.cn/t_guide/ubuntu.html</loc>
+    
+    <lastmod>2017-08-01T08:04:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://zephyrproject.cn/zh-cn/docs/latest/index.html</loc>
     
     <lastmod>2017-08-01T06:26:47.897Z</lastmod>
