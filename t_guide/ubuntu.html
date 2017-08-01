@@ -41,19 +41,19 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Zephyr中文社区">
   <!-- Open Graph -->
-  <meta name="description" content="作者：tidyjiang8  如果对 Linux 有一点基础的话，建议使用 Linux 作为开发环境。我们这里以 Ubuntu 为例。 如果你的操作系统是 win10 的话，可以直接使用 win10 的 Ubuntu 子系统，再也不需要笨重虚拟机了，非常方便，具体过程请参考教程 使用 Win10 的 Liux 子系统搭建 Zephyr OS 开发环境。 安装依赖的软件包$ sudo apt-ge">
+  <meta name="description" content="作者：tidyjiang8  如果对 Linux 有一点基础的话，建议使用 Linux 作为开发环境。我们这里以 Ubuntu 为例。 如果你的操作系统是 win10 的话，可以直接使用 win10 的 Ubuntu 子系统，再也不需要笨重虚拟机了，非常方便，感谢微软的努力。具体过程请参考教程 使用Win10的Liux子系统搭建Zephyr OS开发环境。 如果你自己没有 Ubuntu 系统的话">
 <meta property="og:type" content="website">
 <meta property="og:title" content="在 Ubuntu 上面搭建 Zephyr OS 开发环境">
 <meta property="og:url" content="http://zephyrproject.cn/t_guide/ubuntu.html">
 <meta property="og:site_name" content="Zephyr中文社区">
-<meta property="og:description" content="作者：tidyjiang8  如果对 Linux 有一点基础的话，建议使用 Linux 作为开发环境。我们这里以 Ubuntu 为例。 如果你的操作系统是 win10 的话，可以直接使用 win10 的 Ubuntu 子系统，再也不需要笨重虚拟机了，非常方便，具体过程请参考教程 使用 Win10 的 Liux 子系统搭建 Zephyr OS 开发环境。 安装依赖的软件包$ sudo apt-ge">
+<meta property="og:description" content="作者：tidyjiang8  如果对 Linux 有一点基础的话，建议使用 Linux 作为开发环境。我们这里以 Ubuntu 为例。 如果你的操作系统是 win10 的话，可以直接使用 win10 的 Ubuntu 子系统，再也不需要笨重虚拟机了，非常方便，感谢微软的努力。具体过程请参考教程 使用Win10的Liux子系统搭建Zephyr OS开发环境。 如果你自己没有 Ubuntu 系统的话">
 <meta property="og:locale" content="zh-cn">
 <meta property="og:image" content="http://zephyrproject.cn/t_guide/ubuntu/menuconfig.jpg">
 <meta property="og:image" content="http://zephyrproject.cn/t_guide/ubuntu/qemu.jpg">
-<meta property="og:updated_time" content="2017-08-01T08:04:06.000Z">
+<meta property="og:updated_time" content="2017-08-01T08:23:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在 Ubuntu 上面搭建 Zephyr OS 开发环境">
-<meta name="twitter:description" content="作者：tidyjiang8  如果对 Linux 有一点基础的话，建议使用 Linux 作为开发环境。我们这里以 Ubuntu 为例。 如果你的操作系统是 win10 的话，可以直接使用 win10 的 Ubuntu 子系统，再也不需要笨重虚拟机了，非常方便，具体过程请参考教程 使用 Win10 的 Liux 子系统搭建 Zephyr OS 开发环境。 安装依赖的软件包$ sudo apt-ge">
+<meta name="twitter:description" content="作者：tidyjiang8  如果对 Linux 有一点基础的话，建议使用 Linux 作为开发环境。我们这里以 Ubuntu 为例。 如果你的操作系统是 win10 的话，可以直接使用 win10 的 Ubuntu 子系统，再也不需要笨重虚拟机了，非常方便，感谢微软的努力。具体过程请参考教程 使用Win10的Liux子系统搭建Zephyr OS开发环境。 如果你自己没有 Ubuntu 系统的话">
 <meta name="twitter:image" content="http://zephyrproject.cn/t_guide/ubuntu/menuconfig.jpg">
 <meta name="twitter:site" content="zephyriot">
 <meta property="fb:admins" content="100000247608790">
@@ -135,7 +135,8 @@
 <p>作者：<a href="http://github.com/tidyjiang8/" target="_blank" rel="external">tidyjiang8</a></p>
 </blockquote>
 <p>如果对 Linux 有一点基础的话，建议使用 Linux 作为开发环境。我们这里以 Ubuntu 为例。</p>
-<p>如果你的操作系统是 win10 的话，可以直接使用 win10 的 Ubuntu 子系统，再也不需要笨重虚拟机了，非常方便，具体过程请参考教程 <a href="win-wsl.html">使用 Win10 的 Liux 子系统搭建 Zephyr OS 开发环境</a>。</p>
+<p>如果你的操作系统是 win10 的话，可以直接使用 win10 的 Ubuntu 子系统，再也不需要笨重虚拟机了，非常方便，感谢微软的努力。具体过程请参考教程 <a href="win10-wsl.html">使用Win10的Liux子系统搭建Zephyr OS开发环境</a>。</p>
+<p>如果你自己没有 Ubuntu 系统的话，可以直接使用我提供的 Ubuntu 硬盘镜像快速搭建开发环境。在这个硬盘镜像里，我已经安装好了所有环境，你只需要导入一下就可以了。具体过程请参考 <a href="pre-install.html">使用预安装Ubuntu硬盘镜像快速搭建Zephyr OS开发环境</a></p>
 <h1 id="安装依赖的软件包" class="article-heading"><a href="#安装依赖的软件包" class="headerlink" title="安装依赖的软件包"></a>安装依赖的软件包<a class="article-anchor" href="#安装依赖的软件包" aria-hidden="true"></a></h1><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ sudo apt-get install git make gcc g++ ncurses-dev doxygen dfu-util device-tree-compiler python-pip3</div></pre></td></tr></table></figure>
 <h1 id="安装-SDK" class="article-heading"><a href="#安装-SDK" class="headerlink" title="安装 SDK"></a>安装 SDK<a class="article-anchor" href="#安装-SDK" aria-hidden="true"></a></h1><p>Zephyr 的 SDK 中包含编译 Zephyr OS 源码的各种工具链以及一些主机工具。进入官方仓库 <a href="https://github.com/zephyrproject-rtos/meta-zephyr-sdk/releases" target="_blank" rel="external">zephyrproject-rtos/meta-zephyr-sdk
 </a>，下载后缀为 <code>.run</code> 的最新 SDK。当前的最新版为 Zephyr SDK 0.9.1。</p>
@@ -167,7 +168,7 @@
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2017-08-01T08:04:06.000Z" itemprop="dateModified">上次更新：2017-08-01</time>
+                <time class="article-footer-updated" datetime="2017-08-01T08:23:40.000Z" itemprop="dateModified">上次更新：2017-08-01</time>
                 <a href="pre-install.html" class="article-footer-next" title="使用预安装版"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
