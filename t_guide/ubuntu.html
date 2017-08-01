@@ -50,7 +50,7 @@
 <meta property="og:locale" content="zh-cn">
 <meta property="og:image" content="http://zephyrproject.cn/t_guide/ubuntu/menuconfig.jpg">
 <meta property="og:image" content="http://zephyrproject.cn/t_guide/ubuntu/qemu.jpg">
-<meta property="og:updated_time" content="2017-08-01T08:23:40.000Z">
+<meta property="og:updated_time" content="2017-08-01T08:24:22.758Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在 Ubuntu 上面搭建 Zephyr OS 开发环境">
 <meta name="twitter:description" content="作者：tidyjiang8  如果对 Linux 有一点基础的话，建议使用 Linux 作为开发环境。我们这里以 Ubuntu 为例。 如果你的操作系统是 win10 的话，可以直接使用 win10 的 Ubuntu 子系统，再也不需要笨重虚拟机了，非常方便，感谢微软的努力。具体过程请参考教程 使用Win10的Liux子系统搭建Zephyr OS开发环境。 如果你自己没有 Ubuntu 系统的话">
@@ -136,58 +136,64 @@
 </blockquote>
 <p>如果对 Linux 有一点基础的话，建议使用 Linux 作为开发环境。我们这里以 Ubuntu 为例。</p>
 <p>如果你的操作系统是 win10 的话，可以直接使用 win10 的 Ubuntu 子系统，再也不需要笨重虚拟机了，非常方便，感谢微软的努力。具体过程请参考教程 <a href="win10-wsl.html">使用Win10的Liux子系统搭建Zephyr OS开发环境</a>。</p>
-<p>如果你自己没有 Ubuntu 系统的话，可以直接使用我提供的 Ubuntu 硬盘镜像快速搭建开发环境。在这个硬盘镜像里，我已经安装好了所有环境，你只需要导入一下就可以了。具体过程请参考 <a href="pre-install.html">使用预安装Ubuntu硬盘镜像快速搭建Zephyr OS开发环境</a></p>
-<h1 id="安装依赖的软件包" class="article-heading"><a href="#安装依赖的软件包" class="headerlink" title="安装依赖的软件包"></a>安装依赖的软件包<a class="article-anchor" href="#安装依赖的软件包" aria-hidden="true"></a></h1><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ sudo apt-get install git make gcc g++ ncurses-dev doxygen dfu-util device-tree-compiler python-pip3</div></pre></td></tr></table></figure>
+<p>如果你自己没有 Ubuntu 系统的话，可以直接使用我提供的 Ubuntu 硬盘镜像快速搭建开发环境。在这个硬盘镜像里，我已经安装好了所有环境，你只需要导入一下就可以了。具体过程请参考 <a href="pre-install.html">使用预安装Ubuntu硬盘镜像快速搭建Zephyr OS开发环境</a>。</p>
+<h1 id="安装依赖的软件包" class="article-heading"><a href="#安装依赖的软件包" class="headerlink" title="安装依赖的软件包"></a>安装依赖的软件包<a class="article-anchor" href="#安装依赖的软件包" aria-hidden="true"></a></h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install git make gcc g++ ncurses-dev doxygen dfu-util device-tree-compiler python-pip3</div></pre></td></tr></table></figure>
 <h1 id="安装-SDK" class="article-heading"><a href="#安装-SDK" class="headerlink" title="安装 SDK"></a>安装 SDK<a class="article-anchor" href="#安装-SDK" aria-hidden="true"></a></h1><p>Zephyr 的 SDK 中包含编译 Zephyr OS 源码的各种工具链以及一些主机工具。进入官方仓库 <a href="https://github.com/zephyrproject-rtos/meta-zephyr-sdk/releases" target="_blank" rel="external">zephyrproject-rtos/meta-zephyr-sdk
 </a>，下载后缀为 <code>.run</code> 的最新 SDK。当前的最新版为 Zephyr SDK 0.9.1。</p>
-<p>可以直接使用命令进行下载：<br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ wget https://github.com/zephyrproject-rtos/meta-zephyr-sdk/releases/download/0.9.1/zephyr-sdk-0.9.1-setup.run</div></pre></td></tr></table></figure></p>
-<p>下载完成后，先添加可执行权限，然后进行安装：<br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ sudo chmod +x zephyr-sdk-0.9.1-setup.run</div><div class="line">$ sudo ./zephyr-sdk-0.9.1-setup.run</div></pre></td></tr></table></figure></p>
+<p>可以直接使用命令进行下载：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ wget https://github.com/zephyrproject-rtos/meta-zephyr-sdk/releases/download/0.9.1/zephyr-sdk-0.9.1-setup.run</div></pre></td></tr></table></figure></p>
+<p>下载完成后，先添加可执行权限，然后进行安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo chmod +x zephyr-sdk-0.9.1-setup.run</div><div class="line">$ sudo ./zephyr-sdk-0.9.1-setup.run</div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>默认会安装在 <code>/opt/zephyr-sdk-xxx/</code> 下面，建议直接使用这个默认的安装路径即可。</p>
 </blockquote>
-<p>安装完成后，配置一些与 Zephyr 相关的环境变量：<br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ cat &lt;&lt;EOF &gt; ~/.zephyrrc</div><div class="line"><span class="built_in">export</span> ZEPHYR_GCC_VARIANT=zephyr</div><div class="line"><span class="built_in">export</span> ZEPHYR_SDK_INSTALL_DIR=/opt/zephyr-sdk</div><div class="line">EOF</div></pre></td></tr></table></figure></p>
+<p>安装完成后，配置一些与 Zephyr 相关的环境变量：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ cat &lt;&lt;EOF &gt; ~/.zephyrrc</div><div class="line"><span class="built_in">export</span> ZEPHYR_GCC_VARIANT=zephyr</div><div class="line"><span class="built_in">export</span> ZEPHYR_SDK_INSTALL_DIR=/opt/zephyr-sdk</div><div class="line">EOF</div></pre></td></tr></table></figure></p>
 <h1 id="下载-Zephyr-源代码" class="article-heading"><a href="#下载-Zephyr-源代码" class="headerlink" title="下载 Zephyr 源代码"></a>下载 Zephyr 源代码<a class="article-anchor" href="#下载-Zephyr-源代码" aria-hidden="true"></a></h1><h2 id="直接下载" class="article-heading"><a href="#直接下载" class="headerlink" title="直接下载"></a>直接下载<a class="article-anchor" href="#直接下载" aria-hidden="true"></a></h2><ul>
 <li>最新开发分支的代码：<a href="https://github.com/zephyrproject-rtos/zephyr/archive/master.zip" target="_blank" rel="external">https://github.com/zephyrproject-rtos/zephyr/archive/master.zip</a></li>
 <li>最新稳定分支 v1.8.0 的代码：<a href="https://github.com/zephyrproject-rtos/zephyr/archive/zephyr-v1.8.0.zip" target="_blank" rel="external">https://github.com/zephyrproject-rtos/zephyr/archive/zephyr-v1.8.0.zip</a></li>
 </ul>
-<h2 id="Git-下载" class="article-heading"><a href="#Git-下载" class="headerlink" title="Git 下载"></a>Git 下载<a class="article-anchor" href="#Git-下载" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ https://github.com/zephyrproject-rtos/zephyr.git</div></pre></td></tr></table></figure>
-<h1 id="编译-hello-world" class="article-heading"><a href="#编译-hello-world" class="headerlink" title="编译 hello-world"></a>编译 hello-world<a class="article-anchor" href="#编译-hello-world" aria-hidden="true"></a></h1><p>除了在上面配置的那两个环境变量外，Zephyr 编译应用程序还需要一些额外的变量，这些变量是使用脚本文件 <code>zephyr-env.sh</code> 来设置的。先进入 Zephyr 根目录，然后配置环境变量：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$ cd zephyr</div><div class="line">$ source zephyr-env.sh</div></pre></td></tr></table></figure></p>
-<p>进入 hello-world 目录，编译：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$ cd samples/hello-world</div><div class="line">$ make</div></pre></td></tr></table></figure></p>
+<h2 id="Git-下载" class="article-heading"><a href="#Git-下载" class="headerlink" title="Git 下载"></a>Git 下载<a class="article-anchor" href="#Git-下载" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ https://github.com/zephyrproject-rtos/zephyr.git</div></pre></td></tr></table></figure>
+<h1 id="编译-hello-world" class="article-heading"><a href="#编译-hello-world" class="headerlink" title="编译 hello-world"></a>编译 hello-world<a class="article-anchor" href="#编译-hello-world" aria-hidden="true"></a></h1><p>除了在上面配置的那两个环境变量外，Zephyr 编译应用程序还需要一些额外的变量，这些变量是使用脚本文件 <code>zephyr-env.sh</code> 来设置的。先进入 Zephyr 根目录，然后配置环境变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd zephyr</div><div class="line">$ source zephyr-env.sh</div></pre></td></tr></table></figure></p>
+<p>进入 hello-world 目录，编译：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd samples/hello-world</div><div class="line">$ make</div></pre></td></tr></table></figure></p>
 <p>上面的 make 命令会使用应用程序的 Makefile 文件中定义的默认设置编译 hello_wolrd 例程。你可以定义环境变量 <code>BOARD</code> 为所支持的其它板子编译应用，例如：<code>make BOARD=arduino_101</code>。关于 make 命令的具体使用方法可以执行 make help。</p>
-<h1 id="对应用程序进行配置" class="article-heading"><a href="#对应用程序进行配置" class="headerlink" title="对应用程序进行配置"></a>对应用程序进行配置<a class="article-anchor" href="#对应用程序进行配置" aria-hidden="true"></a></h1><p>Zephyr 提供了一个图形化配置界面 menuconfig。你可以在编译应用程序前使用该工具选择你所需的功能：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$ make BOARD=frdm-k64f menuconfig</div></pre></td></tr></table></figure></p>
+<h1 id="对应用程序进行配置" class="article-heading"><a href="#对应用程序进行配置" class="headerlink" title="对应用程序进行配置"></a>对应用程序进行配置<a class="article-anchor" href="#对应用程序进行配置" aria-hidden="true"></a></h1><p>Zephyr 提供了一个图形化配置界面 menuconfig。你可以在编译应用程序前使用该工具选择你所需的功能：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ make BOARD=frdm-k64f menuconfig</div></pre></td></tr></table></figure></p>
 <center><br><br><img src="ubuntu/menuconfig.jpg" alt=""><br><br></center>
 
 <p>关于 menuconfig 的详细用法，请参考：<a href="https://www.zephyrproject.org/doc/application/application.html#overriding-default-configuration" target="_blank" rel="external">https://www.zephyrproject.org/doc/application/application.html#overriding-default-configuration</a>。</p>
 <h1 id="使用-QEMU-仿真" class="article-heading"><a href="#使用-QEMU-仿真" class="headerlink" title="使用 QEMU 仿真"></a>使用 QEMU 仿真<a class="article-anchor" href="#使用-QEMU-仿真" aria-hidden="true"></a></h1><p>Zephyr 支持在 x86、ARM Cortex-M3 和 Xtensa 等多种架构下使用 qemu 进行仿真。</p>
-<p>对 x86 架构进行仿真：<br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ make BOARD=qemu_x86 run</div></pre></td></tr></table></figure></p>
-<p>对 ARM Cortex-M3 架构进行仿真：<br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ make BOARD=qemu_cortex_m3 run</div></pre></td></tr></table></figure></p>
-<p>对 Xtensa 架构进行仿真：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$ make BOARD=qemu_xtensa run</div></pre></td></tr></table></figure></p>
+<p>对 x86 架构进行仿真：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ make BOARD=qemu_x86 run</div></pre></td></tr></table></figure></p>
+<p>对 ARM Cortex-M3 架构进行仿真：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ make BOARD=qemu_cortex_m3 run</div></pre></td></tr></table></figure></p>
+<p>对 Xtensa 架构进行仿真：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ make BOARD=qemu_xtensa run</div></pre></td></tr></table></figure></p>
 <center><br><br><img src="ubuntu/qemu.jpg" alt=""><br><br>仿真结果<br><br></center>
 
 <p>退出仿真界面的方法：<strong>先按 CTRL+a，再按 x</strong>。</p>
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2017-08-01T08:23:40.000Z" itemprop="dateModified">上次更新：2017-08-01</time>
+                <time class="article-footer-updated" datetime="2017-08-01T08:24:22.758Z" itemprop="dateModified">上次更新：2017-08-01</time>
                 <a href="pre-install.html" class="article-footer-next" title="使用预安装版"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
 <section id="comments">
   <div id="disqus_thread"></div>
 </section>
+
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
-  var disqus_shortname = 'zephyrproject';
-  var disqus_url = 'http://zephyrproject.cn/t_guide/ubuntu.html';
-  var disqus_title = "在 Ubuntu 上面搭建 Zephyr OS 开发环境";
-  var disqus_config = function(){
-    this.language = 'zh';
-  };
-  (function(){
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    dsq.src = 'https://go.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
+var gitment = new Gitment({
+  owner: 'tidyjiang8',
+  repo: 'esp-idf-zh',
+  oauth: {
+    client_id: 'ad0b343a10e201965ac6',
+    client_secret: '4cc2c3eca459a20aea9720095da3c591685a8986',
+  },
+})
+gitment.render('disqus_thread')
 </script>
+
+<script>
+
+</script>
+
 
             </div>
           </div>
