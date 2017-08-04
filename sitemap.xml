@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://zephyrproject.cn/t_guide/qemu.html</loc>
+    <loc>http://zephyrproject.cn/t_guide/overview.html</loc>
     
-    <lastmod>2017-08-04T05:55:28.728Z</lastmod>
+    <lastmod>2017-08-04T06:26:39.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://zephyrproject.cn/t_guide/overview.html</loc>
+    <loc>http://zephyrproject.cn/t_guide/qemu.html</loc>
     
-    <lastmod>2017-08-04T03:16:08.027Z</lastmod>
+    <lastmod>2017-08-04T05:55:28.728Z</lastmod>
     
   </url>
   
@@ -23,7 +23,7 @@
   </url>
   
   <url>
-    <loc>http://zephyrproject.cn/opensource/index.html</loc>
+    <loc>http://zephyrproject.cn/tutorial/deep/index.html</loc>
     
     <lastmod>2017-08-01T06:26:47.897Z</lastmod>
     
@@ -37,7 +37,7 @@
   </url>
   
   <url>
-    <loc>http://zephyrproject.cn/tutorial/deep/index.html</loc>
+    <loc>http://zephyrproject.cn/opensource/index.html</loc>
     
     <lastmod>2017-08-01T06:26:47.897Z</lastmod>
     
